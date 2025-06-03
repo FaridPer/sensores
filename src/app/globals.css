@@ -4,8 +4,9 @@ body{
 
 .graph {
   height: 250px;
-  width: 400px;
-  margin-left: 0;
+  width: 500px;
+  margin-left:-10px;
+
 }
 
 .bg-red-500 {

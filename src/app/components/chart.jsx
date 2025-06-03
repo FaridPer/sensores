@@ -49,7 +49,7 @@ export default function HumedadChart() {
           <LineChart data={data}>
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis dataKey="timestamp" />
-            <YAxis domain={[0, 1024]} />
+            <YAxis domain={[0, 1024]}  reversed={true} />
             <Tooltip />
             <Line type="monotone" dataKey="humedad" stroke="#38bdf8" />
           </LineChart>
