@@ -10,6 +10,7 @@ export default function HumedadChart() {
   const [data, setData] = useState([]);
 
   useEffect(() => {
+  const fetchData = () => {
     fetch("/api/datos")
       .then((res) => res.json())
       .then((data) => {
@@ -18,8 +19,19 @@ export default function HumedadChart() {
           timestamp: new Date(item.fecha).toLocaleTimeString(),
         }));
         setData(formateado.reverse());
-      });      
-  }, []);
+      });
+  };
+
+  // Ejecutar una vez al montar
+  fetchData();
+
+  // Intervalo de 10 segundos
+  const intervalId = setInterval(fetchData, 10000);
+
+  // Cleanup al desmontar
+  return () => clearInterval(intervalId);
+}, []);
+
 
   function getEstadoHumedad(valor) {
     if (valor > 800) return { texto: "🌵 Suelo Seco", color: "bg-red-500" };
