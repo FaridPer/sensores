@@ -34,8 +34,8 @@ export default function HumedadChart() {
 
 
   function getEstadoHumedad(valor) {
-    if (valor > 700) return { texto: "🌵 Suelo Seco", color: "bg-red-500" };
-    if (valor > 400) return { texto: "🌤️ Suelo Moderado", color: "bg-yellow-400" };
+    if (valor > 800) return { texto: "🌵 Suelo Seco", color: "bg-red-500" };
+    if (valor > 500) return { texto: "🌤️ Suelo Moderado", color: "bg-yellow-400" };
     return { texto: "💧 Suelo Húmedo", color: "bg-blue-500" };
   }
   function EstadoVisual({ valor }) {
