@@ -26,7 +26,7 @@ export default function HumedadChart() {
   fetchData();
 
   // Intervalo de 10 segundos
-  const intervalId = setInterval(fetchData, 5000);
+  const intervalId = setInterval(fetchData, 3000);
 
   // Cleanup al desmontar
   return () => clearInterval(intervalId);
@@ -34,7 +34,7 @@ export default function HumedadChart() {
 
 
   function getEstadoHumedad(valor) {
-    if (valor > 800) return { texto: "🌵 Suelo Seco", color: "bg-red-500" };
+    if (valor > 700) return { texto: "🌵 Suelo Seco", color: "bg-red-500" };
     if (valor > 400) return { texto: "🌤️ Suelo Moderado", color: "bg-yellow-400" };
     return { texto: "💧 Suelo Húmedo", color: "bg-blue-500" };
   }
@@ -46,7 +46,7 @@ export default function HumedadChart() {
         <h3>{estado.texto}</h3>
         <p >Lectura actual: {valor} / 1024</p>
       </div>
-    );
+    );  
   }
   
   return (
