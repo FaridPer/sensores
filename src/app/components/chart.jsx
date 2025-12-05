@@ -26,7 +26,7 @@ export default function HumedadChart() {
   fetchData();
 
   // Intervalo de 10 segundos
-  const intervalId = setInterval(fetchData, 10000);
+  const intervalId = setInterval(fetchData, 5000);
 
   // Cleanup al desmontar
   return () => clearInterval(intervalId);
